@@ -1,0 +1,83 @@
+.proxy-item {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    padding: 10px;
+    border-radius: 4px;
+    background: $color-white;
+    user-select: none;
+    cursor: default;
+    box-shadow: 2px 5px 20px -3px rgba($color-primary-dark, 0.2);
+    transition: all 300ms ease;
+
+    .proxy-type {
+        padding: 2px 5px;
+        font-size: 10px;
+        color: $color-white;
+        border-radius: 2px;
+    }
+
+    .proxy-name {
+        display: -webkit-box;
+        margin-top: 10px;
+        color: $color-primary-darken;
+        font-size: 10px;
+        overflow: hidden;
+        word-break: break-word;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .proxy-delay {
+        position: absolute;
+        left: 10px;
+        bottom: 13px;
+        font-size: 10px;
+        color: rgba($color: $color-primary-darken, $alpha: 0.8);
+    }
+
+    .proxy-editor {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        cursor: pointer;
+        color: rgba($color: $color-primary-darken, $alpha: 0.8);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 300ms ease;
+    }
+
+    &:hover {
+        box-shadow: 0 14px 20px -4px rgba($color-primary-darken, 0.4);
+
+        .proxy-editor {
+            opacity: 1;
+            pointer-events: visible;
+        }
+    }
+}
+
+.proxy-error {
+    opacity: 0.5;
+
+    .proxy-type {
+        background-color: $color-gray-darken;
+    }
+}
+
+@media (max-width: 768px) {
+    .proxy-item {
+        $height: 70px;
+
+        height: $height;
+
+        .proxy-delay {
+            left: unset;
+            bottom: unset;
+            top: 0;
+            right: 20px;
+            height: $height;
+            line-height: $height;
+        }
+    }
+}

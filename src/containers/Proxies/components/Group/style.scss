@@ -1,0 +1,20 @@
+.proxy-group {
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px;
+    color: $color-black-light;
+}
+
+.proxies-group-item {
+    border-bottom: 1px solid $color-gray;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .proxy-group {
+        flex-direction: column;
+    }
+}
